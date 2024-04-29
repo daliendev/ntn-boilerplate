@@ -56,7 +56,19 @@ collections:
           widget: 'list',
           required: false,
           fields: [
-            { label: 'Сервис', name: 'label', widget: 'string' },
+            {
+              label: 'Сервис',
+              name: 'label',
+              widget: 'select',
+              default: 'apple music',
+              options: [
+                { label: 'Apple Music', value: 'apple music' },
+                { label: 'Deezer', value: 'deezer' },
+                { label: 'Spotify', value: 'spotify' },
+                { label: 'VK Music', value: 'vk music' },
+                { label: 'Yandex Music', value: 'yandex music' },
+              ],
+            },
             { label: 'Ссылка', name: 'url', widget: 'string' }
           ]
         }

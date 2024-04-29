@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-secondary-950 w-full z-[999999]">
+  <div class="bg-[#0a0909] w-full z-[999999]">
     <nav>
         <ul class="grid grid-cols-3 gap-4 items-center py-4">
             <li class="col-start-2 flex justify-center">

@@ -11,9 +11,12 @@
       <li v-for="(post, index) in posts" :key="index"  class="bg-secondary-700 text-third-100 transition-all rounded-lg lg:col-span-3">
         <nuxt-link :to="post._path" class="card card--clickable">
           <template v-if="postType === 'releases'">
-            <img v-if="post.cover" class="cover-image w-full object-cover rounded-t-lg" :src="post.cover">
+            <img v-if="post.cover"
+            class="cover-image w-full h-96 object-cover rounded-t-lg" 
+            draggable="false"
+            :src="post.cover">
             <span class="flex-1">
-              <h3 class="card-title text-center">{{ post.title }}</h3>
+              <h3 class="card-title text-center py-2">{{ post.title }}</h3>
             </span>
           </template>
         </nuxt-link>
