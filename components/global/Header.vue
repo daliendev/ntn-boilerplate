@@ -1,65 +1,27 @@
 <template>
-  <nav class="scrim-bg fixed z-40 top-0 inset-x-0 pt-3 px-3" aria-label="Main Menu">
-    <ul class="flex">
-      <li class="flex-1">
-        <nuxt-link class="btn block" to="/">Home</nuxt-link>
-      </li>
-      <li class="flex-1 ml-2">
-        <nuxt-link class="btn block" to="/blog">Blog</nuxt-link>
-      </li>
-      <li class="flex-1 ml-2">
-        <nuxt-link class="btn block" to="/projects">Projects</nuxt-link>
-      </li>
-    </ul>
-  </nav>
+  <div class="bg-secondary-950 w-full z-[999999]">
+    <nav>
+        <ul class="grid grid-cols-3 gap-4 items-center py-4">
+            <li class="col-start-2 flex justify-center">
+                <a href="/" class="text-primary-300 flex items-center gap-2">
+                        <icon-smiley></icon-smiley>
+                        <span class="verbaland__title">verbaland</span>
+                </a>
+            </li>
+            <!-- <li class="hidden lg:flex col-start-3 justify-end mx-8">
+                <a href="/releases"
+                    class="border-[2px] border-primary-300 transition-all text-primary-300 hover:text-secondary-950 hover:bg-primary-300  px-3 py-2 rounded-xl">Последние релизы</a>
+            </li> -->
+        </ul>
+    </nav>
+  </div>
 </template>
 
-<script>
-export default {
-  name: 'Header'
-}
+<script setup>
+import IconSmiley from '~/components/icons/smiley.svg'
+
 </script>
 
-<style lang="pcss" scoped>
-.scrim-bg {
-  &::before {
-    content: '';
-    z-index: -1;
-    background-color: var(--bg);
-    @apply absolute bottom-0 inset-x-0 h-12 mb-4 transition-colors duration-200 ease-in-out;
-  }
-  &::after {
-    content: '';
-    z-index: -1;
-    opacity: 1;
-    animation: fadeIn1 500ms ease-in-out;
-    @apply pointer-events-none absolute bottom-0 inset-x-0 h-12 -mb-8;
-    background: linear-gradient(to bottom, #111827, transparent);
-  }
-}
-.nuxt-link-exact-active {
-  @apply text-gray-200 border-gray-400 bg-gray-800 bg-opacity-25 cursor-default;
-}
+<style scoped>
 
-.light {
-  & .scrim-bg {
-    &::after {
-      animation-name: fadeIn2;
-      background: linear-gradient(to bottom, #e5e7eb, transparent);
-    }
-  }
-  & .nuxt-link-exact-active {
-    @apply text-primary-700 border-gray-600 bg-gray-100;
-  }
-}
-
-/* Need two because of smoother switching between color modes */
-@keyframes fadeIn1 {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes fadeIn2 {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 </style>

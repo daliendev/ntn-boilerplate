@@ -7,29 +7,13 @@
         </SkeletonContentPlaceholders>
       </div>
     </div>
-    <ul v-else-if="posts?.length > 0" class="cards">
-      <li v-for="(post, index) in posts" :key="index">
+    <ul v-else-if="posts?.length > 0" class="max-w-[900px] mx-8 lg:mx-auto grid lg:grid-cols-6 gap-8">
+      <li v-for="(post, index) in posts" :key="index"  class="bg-secondary-700 text-third-100 transition-all rounded-lg lg:col-span-3">
         <nuxt-link :to="post._path" class="card card--clickable">
-          <template v-if="postType === 'projects'">
+          <template v-if="postType === 'releases'">
+            <img v-if="post.cover" class="cover-image w-full object-cover rounded-t-lg" :src="post.cover">
             <span class="flex-1">
-              <h6 class="inline-block py-1 px-2 mr-1 bg-gray text-white text-sm font-medium rounded-sm">{{ post.category
-                }}</h6>
-              <h3 class="card-title">{{ post.title }}</h3>
-              <p class="mt-2">{{ post.description }}</p>
-            </span>
-            <img v-if="post.cover" class="cover-image" :src="post.cover">
-          </template>
-
-          <template v-else>
-            <span class="w-full">
-              <span class="flex justify-between align-baseline">
-                <h3 class="card-title">{{ post.title }}</h3>
-                <h6 v-if="post.createdAt"
-                  class="self-start inline-block mt-0 py-1 px-2 bg-gray text-white text-base font-medium rounded-sm whitespace-no-wrap">
-                  {{ useFormatDate(post.createdAt) }}
-                </h6>
-              </span>
-              <p class="mt-2">{{ post.description }}</p>
+              <h3 class="card-title text-center">{{ post.title }}</h3>
             </span>
           </template>
         </nuxt-link>
@@ -45,8 +29,8 @@
 const props = defineProps({
   postType: {
     type: String,
-    default: 'blog',
-    validator: (val) => ['blog', 'projects'].includes(val),
+    default: 'releases',
+    validator: (val) => ['releases'].includes(val),
   },
   amount: { // ? https://content.nuxtjs.org/fetching#limitn
     type: Number,

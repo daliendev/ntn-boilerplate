@@ -11,7 +11,9 @@
         <p class="mb-4">{{ error.message }}</p>
       </template>
       <nav class="mt-12" aria-label="go to home">
-        <router-back to="/" class="block" />
+        <a href="/">
+          Back to home
+        </a>
       </nav>
     </section>
   </main>

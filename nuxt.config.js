@@ -100,17 +100,6 @@ export default defineNuxtConfig({
     cssPath: '~/assets/css/main.pcss',
     exposeConfig: false // enables `import { theme } from '#tailwind.config'`
   },
-  colorMode: {
-    classSuffix: '',
-    preference: 'system', // default value of $colorMode.preference
-    fallback: COLOR_MODE_FALLBACK, // fallback value if not system preference found
-    componentName: 'ColorScheme',
-    cookie: {
-      options: {
-        sameSite: 'lax'
-      }
-    }
-  },
   pwa: {
     manifest: {
       name: SITE_INFO.sitename || process.env.npm_package_name || '',

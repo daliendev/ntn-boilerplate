@@ -1,7 +1,9 @@
 <template>
-  <div class="wrapper">
+  <div class="min-h-svh flex flex-col">
     <Header />
-    <slot />
-    <ColorModePicker />
+    <div class="grow bg-secondary-950">
+      <slot />
+    </div>
+    <Footer />
   </div>
 </template>

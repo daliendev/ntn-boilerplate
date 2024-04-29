@@ -1,58 +1,46 @@
-/*
- ** TailwindCSS Configuration File
- **
- ** Docs: https://tailwindcss.com/docs/configuration
- ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
- */
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
-    darkMode: 'class',
-    extend: {
-      fontFamily: {
-        sans: ['Inter']
+    colors: {
+      'primary': {
+          '50': '#fffaeb',
+          '100': '#fff2c6',
+          '200': '#ffe388',
+          '300': '#ffd666',
+          '400': '#ffb920',
+          '500': '#f99707',
+          '600': '#dd7002',
+          '700': '#b74d06',
+          '800': '#943a0c',
+          '900': '#7a310d',
+          '950': '#461802',
       },
-      colors: {
-        gray: {
-          '50': 'var(--color-gray-50)', // #F9FAFB
-          '100': 'var(--color-gray-100)', // #F3F4F6
-          '200': 'var(--color-gray-200)', // #E5E7EB
-          '300': 'var(--color-gray-300)', // #D1D5DB
-          '400': 'var(--color-gray-400)', // #9CA3AF
-          DEFAULT: 'var(--color-gray)', // #6B7280
-          '600': 'var(--color-gray-600)', // #4B5563
-          '700': 'var(--color-gray-700)', // #374151
-          '800': 'var(--color-gray-800)', // #1F2937
-          '900': 'var(--color-gray-900)' // #111827
-        },
-        primary: {
-          '100': 'var(--color-primary-100)', // #ECEFF5
-          '200': 'var(--color-primary-200)', // #C3CBDC
-          '300': 'var(--color-primary-300)', // #9BA8C2
-          '400': 'var(--color-primary-400)', // #7686A6
-          DEFAULT: 'var(--color-primary)', // #526488
-          '600': 'var(--color-primary-600)', // #3E4F70
-          '700': 'var(--color-primary-700)', // #2C3A57
-          '800': 'var(--color-primary-800)', // #1C263B
-          '900': 'var(--color-primary-900)' // #0D131E
-        }
+      'secondary': {
+          '50': '#f6f7f9',
+          '100': '#ebedf3',
+          '200': '#d3d8e4',
+          '300': '#adb7cc',
+          '400': '#8090b0',
+          '500': '#607397',
+          '600': '#4c5b7d',
+          '700': '#3e4a66',
+          '800': '#364056',
+          '900': '#313849',
+          '950': '#181b24',
       },
-      screens: {
-        xs: '480px' // Added xs
-        // 'sm': '640px',
-        // 'md': '768px',
-        // 'lg': '1024px',
-        // 'xl': '1280px',
-      }
+      'third': {
+          '50': '#f5f5f5',
+          '100': '#efefef',
+          '200': '#dcdcdc',
+          '300': '#bdbdbd',
+          '400': '#989898',
+          '500': '#7c7c7c',
+          '600': '#656565',
+          '700': '#525252',
+          '800': '#464646',
+          '900': '#3d3d3d',
+          '950': '#292929',
+      },
     }
-  },
-  plugins: [],
-  content: [ // Learn more on https://tailwindcss.com/docs/content-configuration
-    'components/**/*.vue',
-    'layouts/**/*.vue',
-    'pages/**/*.vue',
-    'plugins/**/*.js',
-    // 'nuxt.config.js'
-  ],
-  safelist: [],
+  }
 }

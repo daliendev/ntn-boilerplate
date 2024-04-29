@@ -1,19 +1,28 @@
-@import './_vars.pcss';
-@import './_transitions.pcss';
-@import './_globals.pcss';
-
-/* @layer base START */
-@import './_typography.pcss';
-@import './_forms.pcss';
-@import './_grid.pcss';
-@import './_cards.pcss';
-/* @layer base END */
-
-/* @layer components START */
-@import './_btns.pcss';
-/* @layer components END */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* If you need to let Tailwind classes overwrite your own classes, they need to be beneath this */
+
+@font-face {
+    font-family: 'MontserratAlternates-Medium';
+    src: url('/fonts/MontserratAlternates-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/RobotoCondensed-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+.verbaland__title {
+    font-family: 'MontserratAlternates-Medium', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+}

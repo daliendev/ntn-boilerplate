@@ -1,8 +1,5 @@
 {
-  "name": "ntn-boilerplate",
-  "version": "3.0.0",
-  "description": "Nuxt-Tailwind-NetlifyCMS boilerplate",
-  "author": "Sven Parker <hello+dev@svenparker.com> (https://svenparker.com)",
+  "name": "verbaland",
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
