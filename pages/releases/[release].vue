@@ -15,7 +15,7 @@
         </template>
       </ContentRenderer>
       
-      <ul class="mx-16 my-8 flex flex-wrap gap-2">
+      <ul class="mx-16 my-8 flex justify-center flex-wrap gap-2">
         <li v-for="link in post.links"
         :key="link.id">
           <a :href="link.url" class="block text-third-100 w-fit border-2 border-third-100 px-4 py-2 rounded-full hover:text-secondary-950 hover:bg-third-100 transition-all">

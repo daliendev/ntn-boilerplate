@@ -1,23 +1,51 @@
 <template>
   <main>
-    <section class="py-8 bg-secondary-950">
-      <posts post-type="releases" :amount="10" />
-    </section>
+    <section class="bg-[#0a0909] grid lg:grid-cols-2">
+      <img src="/images/verbaland/header_picture.JPG" class="xl:max-h-none xl:h-[calc(100svh-56px)] w-svw xl:w-full object-cover" />
+      <div class="flex items-center justify-center m-8">
+        <div class="bg-secondary-950 text-third-100 transition-all rounded-lg">
+        <nuxt-link :to="lastRelease._path" class="card card--clickable">
+          <img v-if="lastRelease.cover"
+          class="cover-image w-full h-72 xl:h-[32rem] object-cover rounded-t-lg" 
+          draggable="false"
+          :src="lastRelease.cover">
+          <span class="flex-1 flex flex-col items-center py-2 xl:py-4">
+            <span class="text-primary-300/90 text-xs lg:text-sm">свежак!</span>
+            <h3 class="text-lg xl:text-2xl">
+              {{ lastRelease.title }}
+            </h3>
+          </span>
+        </nuxt-link>
 
-    <section class="bg-[#0a0909] py-10">
-    <div class="max-w-[900px] mx-auto grid lg:grid-cols-6 gap-8">
-        <img src="/images/verbaland/contact_picture.png"
-        draggable="false"
-        loading="lazy"
-        alt="Верба сидит на подиуме из бетонных кубов"
-        class="w-2/3 mx-auto lg:w-full lg:col-span-2" />
-        <div class="lg:col-span-4 h-full flex flex-col items-center justify-center">
-            <p class="text-third-100 py-4 px-8 text-center">Она так долго ждала... Она ждала так, как не ждут парней из армии.. Ждала так, как Хатико не ждал своего хозяина... Долгие годы она мучилась, ожидая его... единственного и неповторимого...самого лучшего... и она дождалась.... Рэп-игра дождалась его... Вербаланда... 🦈</p>
-            <a href="https://t.me/n1verba"
-            aria-current="false"
-            class="border-primary-300 border-[2px] text-primary-300 hover:bg-primary-300 transition-all hover:text-secondary-950 px-6 py-2 rounded-xl">Залетай в телегу</a>
-        </div>
-    </div>
-</section>
+        <ul class="mx-8 my-4 xl:mx-16 xl:my-8 flex justify-center flex-wrap gap-2">
+        <li v-for="link in lastRelease.links"
+        :key="link.id">
+          <a :href="link.url" class="block text-third-100 w-fit border-2 border-third-100 px-4 py-2 rounded-full hover:text-secondary-950 text-xs xl:text-base hover:bg-third-100 transition-all">
+            {{ link.label }}
+          </a>
+        </li>
+      </ul>
+      </div>
+      </div>
+    </section>
+    <section class="py-8 bg-secondary-950">
+      <posts :amount="4" />
+    </section>
   </main>
 </template>
+
+<script setup>
+import { computed } from 'vue'
+
+const { data: lastReleases, pending, refresh, error } = await useLazyAsyncData(
+  `last-release`,
+  () => markRaw(
+    queryContent(`/releases`)
+      .limit(1)
+      .find()
+      .catch((err) => console.error(err) || [])
+  )
+)
+
+const lastRelease = computed(() => lastReleases.value[0])
+</script>

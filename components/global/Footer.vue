@@ -1,4 +1,19 @@
 <template>
+  <section class="bg-[#0a0909] py-10">
+    <div class="max-w-[900px] mx-auto grid lg:grid-cols-6 gap-8">
+        <img src="/images/verbaland/contact_picture.png"
+        draggable="false"
+        loading="lazy"
+        alt="Верба сидит на подиуме из бетонных кубов"
+        class="w-2/3 mx-auto lg:w-full lg:col-span-2" />
+        <div class="lg:col-span-4 h-full flex flex-col items-center justify-center">
+            <p class="text-third-100 py-4 px-8 text-center">Она так долго ждала... Она ждала так, как не ждут парней из армии.. Ждала так, как Хатико не ждал своего хозяина... Долгие годы она мучилась, ожидая его... единственного и неповторимого...самого лучшего... и она дождалась.... Рэп-игра дождалась его... Вербаланда... 🦈</p>
+            <a href="https://t.me/n1verba"
+            aria-current="false"
+            class="border-primary-300 border-[2px] text-primary-300 hover:bg-primary-300 transition-all hover:text-secondary-950 px-6 py-2 rounded-xl">Залетай в телегу</a>
+        </div>
+    </div>
+  </section>
   <footer class="bg-secondary-950 text-third-100 py-10 lg:py-6 px-8">
       <div class="grid lg:grid-cols-4 max-w-[900px] mx-auto gap-8">
           <ul class="flex flex-col gap-4">
