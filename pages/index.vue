@@ -44,7 +44,7 @@ import { computed } from 'vue'
 const { data: lastReleases, pending, refresh, error } = await useLazyAsyncData(
   `last-release`,
   () => markRaw(
-    queryContent(`/releases`)
+    queryContent(`releases`)
       .limit(1)
       .find()
       .catch((err) => console.error(err) || [])

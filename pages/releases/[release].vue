@@ -32,7 +32,7 @@ const route = useRoute()
 
 const { data: post, pending, refresh, error } = await useAsyncData(
   'post',
-  () => queryContent('/releases', route.params.release)
+  () => queryContent('releases', route.params.release)
     .findOne()
     .catch((err) => console.error(err) || [])
 )

@@ -52,7 +52,7 @@ const pageAmount = ref(1)
 const { data: viewablePosts, pending, refresh, error } = await useLazyAsyncData(
   `releases-list`,
   () => markRaw(
-    queryContent(`/releases`)
+    queryContent(`releases`)
       .sort({ [props.sortBy.key]: props.sortBy.direction })
       .skip(pageAmount.value)
       .limit(pageAmount.value === 1 ? props.amount : pageAmount.value)
@@ -66,7 +66,7 @@ const { data: totalPosts } = await useLazyAsyncData(
 `releases-list-count`,
 async () => {
   try {
-    const count = await queryContent(`/releases`)
+    const count = await queryContent(`releases`)
     .only('title')
     .skip(1)
     .count()
@@ -83,7 +83,7 @@ const loadMorePosts = async () => {
   if(pageAmount.value === 1) pageAmount.value = props.amount
   else pageAmount.value += pageAmount.value
   
-  const fetchedPosts = await queryContent(`/releases`)
+  const fetchedPosts = await queryContent(`releases`)
   .sort({ [props.sortBy.key]: props.sortBy.direction })
   .skip(pageAmount.value)
   .limit(pageAmount.value === 1 ? props.amount : pageAmount.value)
