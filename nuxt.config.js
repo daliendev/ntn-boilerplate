@@ -1,7 +1,7 @@
 import * as SITE_INFO from './content/site/info.json'
-import { COLOR_MODE_FALLBACK } from './utils/globals.js'
 
 export default defineNuxtConfig({
+  ssr: true,
   target: 'static',
   generate: {
     fallback: true
