@@ -51,9 +51,5 @@ const { data: lastReleases, pending, refresh, error } = await useLazyAsyncData(
   )
 )
 
-watchEffect(() => {
-  refresh()
-})
-
 const lastRelease = computed(() => lastReleases.value?.length ? lastReleases.value[0] : null)
 </script>
