@@ -15,40 +15,43 @@ public_folder: /img
 
 # Docs: https://www.netlifycms.org/docs/configuration-options/#collections
 collections:
-  - label: 'Site settings'
+  - label: 'Настройки сайта'
     name: 'site'
     files:
-      - label: 'Info'
+      - label: 'Инфо'
         name: 'info'
         file: 'content/site/info.json'
         format: 'json'
         editor:
           preview: false
         fields:
-          - { label: Site Name, name: sitename, widget: string, hint: 'This is used for the site title' }
+          - { label: Название сайта, name: sitename, widget: string }
           - {
-              label: Site Description,
+              label: Описание сайта,
               name: sitedescription,
               widget: string,
-              hint: 'This is used as descriptive text for links that link to this site',
             }
           - {
-              label: Site Language,
+              label: Язык сайта,
               name: sitelang,
               widget: string,
               pattern: ['^[a-z]{2}([-])?([A-Za-z]{2})?$', 'Must match "xx" or "xx-XX" syntax (ex. "en" or "sv-SE")'],
             }
-          # - { label: Site Email, name: siteemail, widget: string, required: false }
   - name: 'releases'
-    label: 'Releases'
-    label_singular: 'Release'
+    label: 'Релизы'
+    label_singular: 'Релиз'
     folder: 'content/releases'
     create: true
     format: 'frontmatter'
     slug: '{{slug}}'
-    preview_path: 'releases/{{slug}}'
     fields:
       - { label: 'Название', name: 'title', widget: 'string', required: true }
+      - label: "Дата создания"
+        name: "createdAt"
+        widget: "datetime"
+        default: ""
+        date_format: "DD.MM.YYYY"
+        picker_utc: false
       - { label: 'Обложка', name: 'cover', widget: 'image', required: false, allow_multiple: false }
       - {
           label: 'Ссылки',
