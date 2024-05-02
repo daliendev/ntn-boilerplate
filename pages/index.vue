@@ -4,7 +4,7 @@
       <img src="/images/verbaland/header_picture.JPG"
       draggable="false"
       alt="Verbaland держится как царь на берузовом фоне. Красота братцы."
-      class="xl:max-h-none xl:h-[calc(100svh-56px)] w-svw xl:w-full object-cover" />
+      class="xl:max-h-none xl:h-[calc(100svh-56px)] h-full w-svw xl:w-full object-cover" />
       <div v-if="lastRelease"
       class="flex items-center justify-center m-8">
       <div class="bg-secondary-800 text-third-100 transition-all rounded-lg">

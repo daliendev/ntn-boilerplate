@@ -92,3 +92,9 @@ Originally based on [Henry Desroches' nuxt-netlify-cms-starter](https://github.c
 
 - > I get Netlify emails but can't use them to login etc.
 - It is probably because the 'netlify-identity-widget' is only included in the `/admin`-page. [Follow the advice here](https://answers.netlify.com/t/common-issue-netlify-cms-git-gateway-email-not-confirmed/10690) or enable the included email-templates’ paths in Netlify, under [Site Settings > Identity > Emails](https://app.netlify.com/sites/YOUR_NETLIFY_SITE_SLUG/settings/identity) and there you can set `/public/emails/THE_TEMPLATE_NAME.html` for each template. This will make sure to use the correct links inside the emails. Look at @audetcameron’s [screenshot here](https://github.com/Knogobert/ntn-boilerplate/issues/8#issuecomment-841469850).
+
+### Handle russian filenames in Git
+
+```bash
+git config --global core.quotePath false
+```
