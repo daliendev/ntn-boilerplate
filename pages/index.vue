@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="mt-2">
     <section class="bg-[#0a0909] grid lg:grid-cols-2">
       <img src="/images/verbaland/header_picture.JPG" class="xl:max-h-none xl:h-[calc(100svh-56px)] w-svw xl:w-full object-cover" />
       <div class="flex items-center justify-center m-8">

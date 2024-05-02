@@ -31,11 +31,13 @@
 const route = useRoute()
 
 const { data: post, pending, refresh, error } = await useAsyncData(
-'post',
-() => queryContent('/releases', route.params.release).findOne()
-.catch((err) => console.error(err) || [])
+  'post',
+  () => queryContent('/releases', route.params.release)
+    .findOne()
+    .catch((err) => console.error(err) || [])
 )
 
-// const storedProject = useState(`project-${route.params.project}`);
-// if (error) showError({ message: "Project not found", cause: error });
+watchEffect(() => {
+  refresh()
+})
 </script>
