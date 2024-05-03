@@ -37,6 +37,10 @@ const { data: post, pending, refresh, error } = await useAsyncData(
     .catch((err) => console.error(err) || [])
 )
 
+useHead({
+    title: post.value.title + ' - Verbaland'
+})
+
 watchEffect(() => {
   refresh()
 })

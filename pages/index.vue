@@ -39,7 +39,9 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+useHead({
+    title: 'Verbaland'
+})
 
 const { data: lastReleases, pending, refresh, error } = await useLazyAsyncData(
   `last-release`,

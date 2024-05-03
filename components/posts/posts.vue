@@ -29,7 +29,6 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
 
 const props = defineProps({
   amount: { // ? https://content.nuxtjs.org/fetching#limitn
