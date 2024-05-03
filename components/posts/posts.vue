@@ -41,7 +41,7 @@ const props = defineProps({
     type: Object,
     default: () => ({
       key: 'createdAt',
-      direction: 1 // you may want `-1` here
+      direction: -1 
     }),
     validator: (obj) => typeof obj.key === 'string' && typeof obj.direction === 'number',
   }
@@ -84,11 +84,11 @@ const loadMorePosts = async () => {
   else pageAmount.value += pageAmount.value
   
   const fetchedPosts = await queryContent(`releases`)
-  .sort({ [props.sortBy.key]: props.sortBy.direction })
-  .skip(pageAmount.value)
-  .limit(pageAmount.value === 1 ? props.amount : pageAmount.value)
-  .find()
-  .catch((err) => console.error(err) || [])
+    .sort({ [props.sortBy.key]: props.sortBy.direction })
+    .skip(pageAmount.value === props.amount ? pageAmount.value + 1 : pageAmount.value)
+    .limit(props.amount)
+    .find()
+    .catch((err) => console.error(err) || [])
   
   viewablePosts.value.push(...fetchedPosts)
   pending.value = false
