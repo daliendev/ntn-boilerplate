@@ -4,7 +4,7 @@
       <li v-for="(post, index) in viewablePosts" :key="index" class="bg-secondary-200/5   transition-all p-3 group rounded-lg lg:col-span-3">
         <nuxt-link :to="post._path">
           <img v-if="post.cover"
-          class="cover-image w-full h-96 object-cover rounded-t-md" 
+          class="w-full rounded-t-md object-contain" 
           draggable="false"
           :src="post.cover">
           <span class="flex-1">

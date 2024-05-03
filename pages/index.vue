@@ -10,7 +10,7 @@
       <div class="bg-secondary-200/5 text-third-100 p-3 transition-all rounded-lg">
         <nuxt-link :to="lastRelease._path" class="card card--clickable">
           <img v-if="lastRelease.cover"
-          class="cover-image w-full h-96 xl:h-[32rem] object-cover rounded-t-md" 
+          class="w-full rounded-t-md object-contain" 
           draggable="false"
           :src="lastRelease.cover">
           <span class="flex-1 flex flex-col items-center py-2 xl:py-4 bg-secondary-800 text-third-100 rounded-b-md">
