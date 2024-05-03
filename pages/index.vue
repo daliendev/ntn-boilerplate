@@ -7,14 +7,14 @@
       class="xl:max-h-none xl:h-[calc(100svh-56px)] h-full w-svw xl:w-full object-cover" />
       <div v-if="lastRelease"
       class="flex items-center justify-center m-8">
-      <div class="bg-secondary-800 text-third-100 transition-all rounded-lg">
+      <div class="bg-secondary-200/5 text-third-100 p-3 transition-all rounded-lg">
         <nuxt-link :to="lastRelease._path" class="card card--clickable">
           <img v-if="lastRelease.cover"
-          class="cover-image w-full h-72 xl:h-[32rem] object-cover rounded-t-lg" 
+          class="cover-image w-full h-96 xl:h-[32rem] object-cover rounded-t-md" 
           draggable="false"
           :src="lastRelease.cover">
-          <span class="flex-1 flex flex-col items-center py-2 xl:py-4">
-            <span class="text-primary-300/90 text-xs lg:text-sm">свежак!</span>
+          <span class="flex-1 flex flex-col items-center py-2 xl:py-4 bg-secondary-800 text-third-100 rounded-b-md">
+            <span class="bg-primary-300/90 text-secondary-950 px-3 py-[1px] rounded-md text-xs lg:text-sm">свежак!</span>
             <h3 class="text-lg xl:text-2xl">
               {{ lastRelease.title }}
             </h3>

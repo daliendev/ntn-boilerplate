@@ -1,14 +1,14 @@
 <template>
   <div class="max-w-[900px] mx-8 my-8 lg:mx-auto flex flex-col items-center gap-8">
     <ul v-if="viewablePosts?.length > 0" class="grid lg:grid-cols-6 gap-8">
-      <li v-for="(post, index) in viewablePosts" :key="index" class="bg-secondary-700 text-third-100 transition-all rounded-lg lg:col-span-3">
-        <nuxt-link :to="post._path" class="card card--clickable">
+      <li v-for="(post, index) in viewablePosts" :key="index" class="bg-secondary-200/5   transition-all p-3 group rounded-lg lg:col-span-3">
+        <nuxt-link :to="post._path">
           <img v-if="post.cover"
-          class="cover-image w-full h-96 object-cover rounded-t-lg" 
+          class="cover-image w-full h-96 object-cover rounded-t-md" 
           draggable="false"
           :src="post.cover">
           <span class="flex-1">
-            <h3 class="card-title text-center py-2">{{ post.title }}</h3>
+            <h3 class="card-title text-center lg:text-lg py-2 bg-secondary-800 text-third-100 rounded-b-md">{{ post.title }}</h3>
           </span>
         </nuxt-link>
       </li>
@@ -84,7 +84,7 @@ const loadMorePosts = async () => {
   
   const fetchedPosts = await queryContent(`releases`)
     .sort({ [props.sortBy.key]: props.sortBy.direction })
-    .skip(pageAmount.value === props.amount ? pageAmount.value + 1 : pageAmount.value)
+    .skip(pageAmount.value + 1)
     .limit(props.amount)
     .find()
     .catch((err) => console.error(err) || [])
