@@ -1,6 +1,6 @@
 # Verbaland website using 🏗️ Boilerplate for Nuxt, Tailwind & NetlifyCMS
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2eba83e0-bb36-43bd-9bf5-1bb1695ec001/deploy-status)](https://dazzling-souffle-70a3d7.netlify.app/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2eba83e0-bb36-43bd-9bf5-1bb1695ec001/deploy-status)](https://app.netlify.com/sites/dazzling-souffle-70a3d7/deploys)
 
 **[Live Demo](https://dazzling-souffle-70a3d7.netlify.app/)**
 
