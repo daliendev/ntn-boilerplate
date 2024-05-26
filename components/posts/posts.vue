@@ -53,8 +53,8 @@ const { data: viewablePosts, pending, refresh, error } = await useLazyAsyncData(
   () => markRaw(
     queryContent(`releases`)
       .sort({ [props.sortBy.key]: props.sortBy.direction })
-      .skip(pageAmount.value)
-      .limit(pageAmount.value === 1 ? props.amount : pageAmount.value)
+      .skip(1)
+      .limit(4)
       .find()
       .catch((err) => console.error(err) || [])
   )
@@ -79,12 +79,13 @@ async () => {
 
 const loadMorePosts = async () => {
   pending.value = true 
-  if(pageAmount.value === 1) pageAmount.value = props.amount
-  else pageAmount.value += pageAmount.value
+  if(pageAmount.value === 1) pageAmount.value = props.amount + 1
+  else pageAmount.value += props.amount
+  console.log(pageAmount.value)
   
   const fetchedPosts = await queryContent(`releases`)
     .sort({ [props.sortBy.key]: props.sortBy.direction })
-    .skip(pageAmount.value + 1)
+    .skip(pageAmount.value)
     .limit(props.amount)
     .find()
     .catch((err) => console.error(err) || [])
@@ -93,7 +94,7 @@ const loadMorePosts = async () => {
   pending.value = false
 }
 
-const hasMorePosts = computed(() => totalPosts.value > pageAmount.value + props.amount)
+const hasMorePosts = computed(() => totalPosts.value > viewablePosts.value?.length + 1)
 
 const placeholderClasses = computed(() => {
   return [...Array.from({ length: props.amount })]

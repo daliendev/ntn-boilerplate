@@ -47,6 +47,7 @@ const { data: lastReleases, pending, refresh, error } = await useLazyAsyncData(
   `last-release`,
   () => markRaw(
     queryContent(`releases`)
+      .sort({ 'createdAt': -1 })
       .limit(1)
       .find()
       .catch((err) => console.error(err) || [])
