@@ -15,7 +15,7 @@
   "dependencies": {
     "@nuxt/content": "^2.12.1",
     "@nuxt/kit": "^3.11.2",
-    "@vite-pwa/nuxt": "^0.7.0",
+    "@vite-pwa/nuxt": "^0.8.0",
     "nuxt": "3.11.2"
   },
   "devDependencies": {
