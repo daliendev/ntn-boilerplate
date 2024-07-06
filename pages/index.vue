@@ -1,10 +1,12 @@
 <template>
   <main class="mt-2">
-    <section class="bg-[#0a0909] grid lg:grid-cols-2">
-      <img src="/images/verbaland/header_picture.JPG"
-      draggable="false"
-      alt="Verbaland держится как царь на берузовом фоне. Красота братцы."
-      class="xl:max-h-none xl:h-[calc(100svh-56px)] h-full w-svw xl:w-full object-cover" />
+    <section class="bg-[#0a0909] xl:h-[calc(100svh-56px)] grid xl:grid-cols-2">
+      <figure class="xl:p-16">
+        <img src="/images/verbaland/header_picture.JPG"
+        draggable="false"
+        alt="Verbaland держится как царь на берузовом фоне. Красота, братцы."
+        class="xl:max-h-none h-full w-svw xl:w-full object-contain" />
+      </figure>
       <div v-if="lastRelease"
       class="flex items-center justify-center m-8">
       <div class="bg-secondary-200/5 text-third-100 p-3 transition-all rounded-lg">
