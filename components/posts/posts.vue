@@ -1,14 +1,14 @@
 <template>
   <div class="max-w-[900px] mx-8 my-8 lg:mx-auto flex flex-col items-center gap-8">
     <ul v-if="viewablePosts?.length > 0" class="grid lg:grid-cols-6 gap-8">
-      <li v-for="(post, index) in viewablePosts" :key="index" class="bg-secondary-200/5   transition-all p-3 group rounded-lg lg:col-span-3">
+      <li v-for="(post, index) in viewablePosts" :key="index" class="bg-secondary-200/5 hover:bg-primary-50/10 transition-all p-3 group rounded-lg lg:col-span-3">
         <nuxt-link :to="post._path">
           <img v-if="post.cover"
-          class="w-full rounded-t-md object-contain" 
+          class="w-full rounded-md object-contain" 
           draggable="false"
           :src="post.cover">
           <span class="flex-1">
-            <h3 class="card-title text-center lg:text-lg py-2 bg-secondary-800 text-third-100 rounded-b-md">{{ post.title }}</h3>
+            <h3 class="card-title text-center mt-2 lg:text-lg py-2 bg-secondary-800 text-third-100 rounded-md">{{ post.title }}</h3>
           </span>
         </nuxt-link>
       </li>
@@ -20,10 +20,9 @@
     <button v-if="!pending && hasMorePosts" @click="loadMorePosts" class="border-primary-300 border-[2px] text-primary-300 hover:bg-primary-300 transition-all hover:text-secondary-950 px-6 py-2 rounded-xl">Показать ещё</button>
   </div>
   <ul v-if="pending" class="max-w-[900px] mx-8 lg:mx-auto grid lg:grid-cols-6 gap-8">
-    <li v-for="placeholder in placeholderClasses" :key="placeholder" class="bg-secondary-500 text-third-100 transition-all rounded-lg lg:col-span-3">
-      <SkeletonContentPlaceholders :centered="true" class="h-96">
-        <SkeletonContentPlaceholdersHeading :img="true" />
-      </SkeletonContentPlaceholders>
+    <li v-for="placeholder in placeholderClasses" :key="placeholder" class="w-full lg:col-span-3 animate-pulse bg-secondary-500 transition-all rounded-lg flex flex-col p-3">
+      <div class="w-full h-[410px] bg-secondary-800"></div>
+      <div class="mt-2 py-2 h-[44px] bg-secondary-800 text-third-100 rounded-md"></div>
     </li>
   </ul>
 </template>

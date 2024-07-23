@@ -1,6 +1,6 @@
 <template>
-  <main class="mt-2">
-    <section class="bg-[#0a0909] xl:h-[calc(100svh-56px)] grid xl:grid-cols-2">
+  <main>
+    <section class="bg-[#04040f] xl:min-h-[calc(100svh-56px)] grid xl:grid-cols-2">
       <figure class="xl:p-16">
         <img src="/images/verbaland/header_picture.JPG"
         draggable="false"
@@ -9,17 +9,17 @@
       </figure>
       <div v-if="lastRelease"
       class="flex items-center justify-center m-8">
-      <div class="bg-secondary-200/5 text-third-100 p-3 transition-all rounded-lg">
+      <div class="bg-secondary-200/5 hover:bg-primary-50/5 text-third-100 p-3 transition-all rounded-lg max-w-xl">
         <nuxt-link :to="lastRelease._path" class="card card--clickable">
           <img v-if="lastRelease.cover"
-          class="w-full rounded-t-md object-contain xl:max-h-[32rem] xl:object-cover" 
+          class="w-full max-w-xl rounded-md object-contain xl:max-h-[24rem] xl:object-cover" 
           draggable="false"
           :src="lastRelease.cover">
-          <span class="flex-1 flex flex-col items-center py-2 xl:py-4 bg-secondary-800 text-third-100 rounded-b-md">
-            <span class="bg-primary-300/90 text-secondary-950 px-3 py-[1px] rounded-md text-xs lg:text-sm">свежак!</span>
+          <span class="flex-1 flex justify-center gap-2 mt-4 items-center py-2 xl:py-4 bg-secondary-800 text-third-100 rounded-md">
             <h3 class="text-lg xl:text-2xl">
               {{ lastRelease.title }}
             </h3>
+            <span class="bg-primary-300/90 text-secondary-950 px-3 py-[1px] rounded-md text-xs lg:text-sm">свежак!</span>
           </span>
         </nuxt-link>
         

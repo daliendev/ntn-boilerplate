@@ -1,9 +1,9 @@
 <template>
-  <div class="bg-[#0a0909] w-full z-[999999] fixed">
+  <div class="bg-[#04040f] w-full">
     <nav>
-      <ul class="grid grid-cols-3 gap-4 items-center py-4">
-        <li class="col-start-2 flex justify-center">
-          <nuxt-link to="/" class="text-primary-300 flex items-center gap-2">
+      <ul class="grid xl:grid-cols-3 gap-4 items-center py-4">
+        <li class="px-16 flex justify-center xl:justify-start">
+          <nuxt-link to="/" class="text-primary-300 text-xl xl:text-3xl flex items-center gap-2">
             <icon-smiley></icon-smiley>
             <span class="verbaland__title">verbaland</span>
           </nuxt-link>
@@ -11,7 +11,6 @@
       </ul>
     </nav>
   </div>
-  <div class="h-12 w-full bg-[#0a0909]"></div>
 </template>
 
 <script setup>

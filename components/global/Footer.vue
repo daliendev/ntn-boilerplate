@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-[#0a0909] py-10">
+  <section class="bg-[#04040f] py-10">
     <div class="max-w-[900px] mx-auto grid lg:grid-cols-6 gap-8">
         <img src="/images/verbaland/contact_picture.png"
         draggable="false"
