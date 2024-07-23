@@ -84,8 +84,6 @@ const loadMorePosts = async () => {
   pending.value = true 
   if(pageAmount.value === 1) pageAmount.value = props.amount + 1
   else pageAmount.value += props.amount
-  console.log(pageAmount.value)
-  
   const fetchedPosts = await queryContent(`releases`)
     .sort({ [props.sortBy.key]: props.sortBy.direction })
     .skip(pageAmount.value)
